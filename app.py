@@ -119,6 +119,44 @@ SCENARIOS = {
         "default_confidence": 0.89,
         "default_economic_penalty": 0.10
     },
+    "WARNING: Thermal Gradient Ambiguity (Upward Escalation Test)": {
+        "text": "WARNING: Unconfirmed thermal gradient fluctuating near joint 4B alongside intermittent sensor jitter; correlation to structural load unknown.",
+        "severity": "WARNING",
+        "tokens_local": 620,
+        "route_path": "vLLM Tier 2 (1.5B Initial Triage) ➔ Upward Escalation Hop ➔ vLLM Tier 3 (7B-VL Deep Verification)",
+        "target_model": "Qwen/Qwen2.5-VL-7B-Instruct (Up-stepped)",
+        "requires_hitl": False,
+        "eval_table": [
+            ("Single-tower visual anomaly detection", "✅ PASS", "Evaluated via local vLLM pipeline"),
+            ("Single-modality triage (Thermal/Stress)", "⚠️ AMBIGUOUS", "1.5B confidence below threshold (0.64)"),
+            ("Multi-tower cascading correlation", "✅ N/A", "Single asset warning"),
+            ("Concealed joint fracture inference", "❌ UP-STEP REQUIRED", "Thermal-stress correlation demands 7B-VL depth"),
+            ("Fused thermal + stress + visual analysis", "🔄 ESCALATING", "Triggering upward hop from 1.5B to 7B-VL"),
+            ("Windshear physics propagation modeling", "✅ N/A", "Stable ambient conditions")
+        ],
+        "default_heuristic_tier": "1.5B",
+        "default_confidence": 0.64,
+        "default_economic_penalty": 0.15
+    },
+    "AUDIT: Nominal Structural Scan (Downward Optimization Test)": {
+        "text": "AUDIT: Comprehensive structural and thermal scan for Tower 2, all metrics completely nominal and baseline stable",
+        "severity": "ROUTINE",
+        "tokens_local": 320,
+        "route_path": "vLLM Tier 3 (7B-VL) ➔ Downward Optimization Cascade (7B ➔ 1.5B ➔ 0.5B)",
+        "target_model": "None (Optimized to 0.5B Local Profile)",
+        "requires_hitl": False,
+        "eval_table": [
+            ("Single-tower visual anomaly detection", "✅ PASS", "Evaluated via 7B-VL heavy initial checkpoint"),
+            ("Single-modality triage (Thermal/Stress)", "✅ PASS", "Zero anomaly verified"),
+            ("Multi-tower cascading correlation", "✅ N/A", "Single asset audit"),
+            ("Concealed joint fracture inference", "✅ N/A", "Nominal baseline confirmed"),
+            ("Fused thermal + stress + visual analysis", "✅ PASS", "High-confidence routine clearance"),
+            ("Windshear physics propagation modeling", "✅ N/A", "Stable ambient conditions")
+        ],
+        "default_heuristic_tier": "7B-VL",
+        "default_confidence": 0.71,
+        "default_economic_penalty": 0.05
+    },
     "ROUTINE: Scheduled Structural Telemetry Ping": {
         "text": "INFO: Routine 15-minute telemetry heartbeat. All structural load cells, tilt sensors, and wind velocity gauges reporting nominal baselines.",
         "severity": "ROUTINE",
