@@ -236,8 +236,5 @@ Execute raw execution traces directly in your terminal to view real-time logprob
 ## 👤 Author & Acknowledgments
 
 * **Author:** Uttara Sawant  
-* **GitHub:** [@uttarasawantgh](https://github.com/uttarasawantgh)  
-* **Repository:** [techex_amsterdam_repo](https://github.com/uttarasawantgh/techex_amsterdam_repo)  
-* **Video Demonstration:** [YouTube Live Demo Link](https://youtu.be/gRkOaEl4Pis)
-
-*Developed for Enterprise & Academic Edge AI Research powered by Nemo-Switchyard, Claude Agent SDK, and NVIDIA DGX Spark.*
+* **GitHub:** [@uttarasawantgh](https://github.com/uttarasawantgh)
+* **Gemini:** Utilized as an AI collaborator for architectural troubleshooting, debugging complex structural normalization logic, and optimizing code documentation. 
